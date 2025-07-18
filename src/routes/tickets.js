@@ -1,4 +1,5 @@
 import { create } from "../controllers/tickets/create.js";
+import { select } from "../controllers/tickets/select.js";
 
 export const routesTickets = [
   {
@@ -6,4 +7,9 @@ export const routesTickets = [
     path: "/tickets",
     controller: create,
   },
+  {
+    method:'GET',
+    path:'/tickets',
+    controller: select
+  }
 ];
