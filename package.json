@@ -1,0 +1,14 @@
+{
+  "name": "support-tickets",
+  "version": "1.0.0",
+  "description": "API de gerenciamento de tickets de suporte",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/server.js"
+  },
+  "author": "Isaac Medeiros",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1"
+}
