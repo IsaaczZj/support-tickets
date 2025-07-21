@@ -25,15 +25,24 @@ export class Database {
     this.#persist();
   }
 
-  select(table, filters) {
+  select(table, filters, id) {
     let data = this.#database[table] ? this.#database[table] : [];
-    if (filters && !id) {
+    if (filters) {
       data = data.filter((row) => {
         return Object.entries(filters).some(([key, value]) => {
           return row[key].toLowerCase().includes(value.toLowerCase());
         });
       });
-      console.log(data);
+
+      return data;
+    }
+    if (id) {
+      const rowIndex = this.#database[table].findIndex((row) => row.id === id);
+      if (rowIndex > -1) {
+        const ticket = this.#database[table][rowIndex];
+
+        return ticket;
+      }
     }
     return data;
   }
@@ -43,11 +52,10 @@ export class Database {
     if (rowIndex > -1) {
       this.#database[table][rowIndex] = {
         ...this.#database[table][rowIndex],
-        ...newData
+        ...newData,
       };
-      this.#persist()
+      this.#persist();
     }
-    
   }
 
   clearAll() {
