@@ -25,15 +25,18 @@ export class Database {
     this.#persist();
   }
 
-  select(table, filters) {
+  select(table, filters, id) {
     let data = this.#database[table] ? this.#database[table] : [];
-    if (filters) {
+    if (filters && !id) {
       data = data.filter((row) => {
         return Object.entries(filters).some(([key, value]) => {
           return row[key].toLowerCase().includes(value.toLowerCase());
         });
       });
-      console.log(data)
+      console.log(data);
+    }
+    if (id) {
+      data = data.find((row) => row.id === id);
     }
     return data;
   }
