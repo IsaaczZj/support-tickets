@@ -25,7 +25,7 @@ export class Database {
     this.#persist();
   }
 
-  select(table, filters, id) {
+  select(table, filters) {
     let data = this.#database[table] ? this.#database[table] : [];
     if (filters && !id) {
       data = data.filter((row) => {
@@ -35,10 +35,19 @@ export class Database {
       });
       console.log(data);
     }
-    if (id) {
-      data = data.find((row) => row.id === id);
-    }
     return data;
+  }
+
+  update(table, id, newData) {
+    const rowIndex = this.#database[table].findIndex((row) => row.id === id);
+    if (rowIndex > -1) {
+      this.#database[table][rowIndex] = {
+        ...this.#database[table][rowIndex],
+        ...newData
+      };
+      this.#persist()
+    }
+    
   }
 
   clearAll() {
