@@ -1,22 +1,23 @@
 {
   "tickets": [
     {
-      "id": "5de8844d-ba90-4ca5-9127-d636a317d1bf",
-      "equipment": "Mouse",
-      "description": "Me enganei, era o mouse que deu problema",
-      "user_name": "Isaac Medeiros",
-      "status": "closed",
-      "created_at": "2025-07-18T19:08:17.078Z",
-      "updated_at": "2025-07-21T13:32:19.452Z"
-    },
-    {
       "id": "5eed60dc-2c92-49f0-840c-1615baf178d7",
       "equipment": "Celular",
       "description": "A tela quebrou",
       "user_name": "Isaac Medeiros",
-      "status": "open",
+      "status": "closed",
       "created_at": "2025-07-18T19:12:54.406Z",
-      "updated_at": "2025-07-18T19:12:54.406Z"
+      "updated_at": "2025-07-18T19:12:54.406Z",
+      "solution": "Equipamento trocado"
+    },
+    {
+      "id": "0f3405fd-c40c-4c0e-9ded-1a5cd9685ccf",
+      "equipment": "Monitor",
+      "description": "A imagem fica piscando",
+      "user_name": "Carlos",
+      "status": "closed",
+      "created_at": "2025-07-21T20:00:41.769Z",
+      "updated_at": "2025-07-21T20:00:41.769Z"
     }
   ]
 }
